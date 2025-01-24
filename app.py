@@ -1,12 +1,27 @@
-import streamlit as st
-from langchain.llms import OpenAI
+from langchain.chat_models import AzureChatOpenAI
 from langchain.prompts import PromptTemplate
+import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from dotenv import load_dotenv
+import os
 
-# Initialize LangChain LLM
-API_KEY = "your_api_key_here"
-llm = OpenAI(api_key=API_KEY)
+# Load environment variables
+load_dotenv()
+
+# API Configuration
+API_KEY = os.getenv("OPENAI_API_KEY")
+ENDPOINT = os.getenv("OPENAI_API_BASE")
+API_VERSION = os.getenv("OPENAI_API_VERSION")
+
+# Initialize LangChain with Azure OpenAI
+llm = AzureChatOpenAI(
+    deployment_name="gpt-4o",  # Replace with your deployment name
+    openai_api_base=ENDPOINT,
+    openai_api_key=API_KEY,
+    openai_api_version=API_VERSION,
+    temperature=0.7
+)
 
 # Load CSV Data
 @st.cache_data
@@ -33,10 +48,10 @@ with col2:
             template="You are a data analyst. Analyze the CSV file and answer the following: {query}"
         )
         structured_query = prompt.format(query=user_query)
-        response = llm.predict(structured_query)
+        response = llm.predict_messages([{"role": "user", "content": structured_query}])
         
         st.subheader("LLM Response")
-        st.write(response)
+        st.write(response.content)
 
 # Dashboard (Left Side)
 with col1:
