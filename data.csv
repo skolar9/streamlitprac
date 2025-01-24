@@ -1,9 +1,21 @@
-Region,Sales,Quarter,Category
-North,200,Q1,Electronics
-South,150,Q1,Clothing
-East,300,Q1,Furniture
-West,250,Q1,Clothing
-North,220,Q2,Electronics
-South,180,Q2,Clothing
-East,310,Q2,Furniture
-West,260,Q2,Clothing
+id,gln,crested_date,status,package level,sku,event time,uuid,parentuuid,tenantid,sysstemid,eldestchildcreationtime,includeinaggregates,bizstep
+1,1234567890123,2024-01-01,In-Stock,Level 1,SKU123,2024-01-02,uuid-1,,tenant1,system1,2024-01-01,True,Receiving
+2,1234567890123,2024-01-01,In-Stock,Level 2,SKU124,2024-01-03,uuid-2,uuid-1,tenant1,system1,2024-01-02,True,Receiving
+3,1234567890123,2024-01-05,Shipped,Level 1,SKU125,2024-01-06,uuid-3,,tenant1,system2,2024-01-05,True,Shipping
+4,1234567890124,2024-01-02,In-Stock,Level 3,SKU126,2024-01-04,uuid-4,,tenant2,system2,2024-01-02,False,Receiving
+5,1234567890124,2024-01-03,In-Stock,Level 1,SKU127,2024-01-05,uuid-5,uuid-4,tenant2,system1,2024-01-03,True,Receiving
+6,1234567890124,2024-01-07,Shipped,Level 2,SKU128,2024-01-08,uuid-6,,tenant2,system1,2024-01-07,True,Shipping
+7,1234567890125,2024-01-01,In-Stock,Level 1,SKU129,2024-01-02,uuid-7,,tenant3,system3,2024-01-01,True,Receiving
+8,1234567890125,2024-01-04,Shipped,Level 3,SKU130,2024-01-05,uuid-8,,tenant3,system3,2024-01-04,False,Shipping
+9,1234567890126,2024-01-05,In-Stock,Level 2,SKU131,2024-01-06,uuid-9,uuid-8,tenant4,system4,2024-01-06,True,Receiving
+10,1234567890126,2024-01-07,Shipped,Level 1,SKU132,2024-01-08,uuid-10,,tenant4,system4,2024-01-07,True,Shipping
+11,1234567890127,2024-01-02,In-Stock,Level 2,SKU133,2024-01-03,uuid-11,,tenant5,system5,2024-01-02,True,Receiving
+12,1234567890127,2024-01-04,In-Stock,Level 1,SKU134,2024-01-05,uuid-12,uuid-11,tenant5,system5,2024-01-03,True,Receiving
+13,1234567890128,2024-01-03,Shipped,Level 1,SKU135,2024-01-04,uuid-13,,tenant6,system6,2024-01-03,False,Shipping
+14,1234567890128,2024-01-06,In-Stock,Level 3,SKU136,2024-01-07,uuid-14,,tenant6,system6,2024-01-06,True,Receiving
+15,1234567890129,2024-01-01,In-Stock,Level 2,SKU137,2024-01-02,uuid-15,,tenant7,system7,2024-01-01,True,Receiving
+16,1234567890129,2024-01-03,Shipped,Level 3,SKU138,2024-01-04,uuid-16,,tenant7,system7,2024-01-03,False,Shipping
+17,1234567890130,2024-01-04,In-Stock,Level 1,SKU139,2024-01-05,uuid-17,uuid-16,tenant8,system8,2024-01-04,True,Receiving
+18,1234567890130,2024-01-06,Shipped,Level 2,SKU140,2024-01-07,uuid-18,,tenant8,system8,2024-01-06,True,Shipping
+19,1234567890131,2024-01-02,In-Stock,Level 1,SKU141,2024-01-03,uuid-19,,tenant9,system9,2024-01-02,True,Receiving
+20,1234567890131,2024-01-05,Shipped,Level 2,SKU142,2024-01-06,uuid-20,,tenant9,system9,2024-01-05,False,Shipping
