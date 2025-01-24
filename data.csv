@@ -1,0 +1,9 @@
+Region,Sales,Quarter,Category
+North,200,Q1,Electronics
+South,150,Q1,Clothing
+East,300,Q1,Furniture
+West,250,Q1,Clothing
+North,220,Q2,Electronics
+South,180,Q2,Clothing
+East,310,Q2,Furniture
+West,260,Q2,Clothing
